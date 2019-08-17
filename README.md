@@ -6,11 +6,13 @@ Install and configure wpasupplicant
 
 Example
 
+```
 wpa:
   - default:
     ssid: "test"
     bssid: 01:23:45:67:89:AB
     psk: 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+```
 
 ## License
 
