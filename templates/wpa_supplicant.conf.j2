@@ -1,0 +1,14 @@
+# {{ ansible_managed }}
+{% for item in wpa %}
+network={
+    ssid="{{ item.ssid }}"
+{%if item.bssid is defined %}
+    bssid={{ item.bssid }}
+{% endif %}
+    psk={{ item.psk }}
+    proto={{ item.proto | default('RSN') }}
+    key_mgmt={{ item.key_mgmt | default('WPA-PSK') }}
+    pairwise={{ item.pairwise | default('CCMP TKIP') }}
+    auth_alg=OPEN
+}
+{% endfor %}
